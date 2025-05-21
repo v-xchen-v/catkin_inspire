@@ -22,6 +22,12 @@ class Hand_Device(object):
         self.thumb_pitch_sim_angle_range = [-5, 35]
         
     def hand_serial_servo_write6_pos(self, positions):
+        """Get angles of 6 joint as order:
+            0.pinky(5) 1.ring(4) 2. middle(3) 3. index(2) 4. thumb(1) pitch 5. thumb(1) yaw
+
+        Args:
+            positions (_type_): _description_
+        """
         pos1, pos2, pos3, pos4, pos5, pos6 = positions
         
         value1_H = pos1 & 0xff
